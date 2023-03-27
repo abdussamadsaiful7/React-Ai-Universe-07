@@ -11,12 +11,25 @@ const Card = () => {
     const [uniqueId, setUniqueId] = useState(null);
     //console.log(uniqueId);
    // console.log(singleData);
+
+    //sort button function
+    // const handleSort =()=>{
+    //     const sortedData = data.sort((a,b) =>{
+
+    //         return new Date(a.published_in) - new Date(b.published_in);
+    //     });
+    //     setData(...data, sortedData)
+        
+    // }
+
    
+   //see more button function
     const handleShowAll =()=>{
         setShowAll(true);
         
     }
 
+    //see less button function
     const handlerLess =()=>{
         setShowAll(false);
     }
@@ -42,13 +55,16 @@ const Card = () => {
     //console.log(data);
     return (
         <>
+            <span>
+            <Button>Sort By Date</Button>
+            </span>
             <div className='grid  gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3  lg:px-10 my-6'>
             {
                 // data.map((singleData)=> {
                 //     console.log(singleData);
                 //     return <SingleData singleData={singleData} key={singleData.id}/>
                 // } )
-                data.slice(0, showAll? 12:6).map((singleData) => <SingleData singleData={singleData} key={singleData.id} 
+                data.slice(0, showAll? 12:6).map((singleData) => <SingleData singleData={singleData} key = {singleData.id}
                 setUniqueId={setUniqueId}/>)
             }
             </div>
