@@ -23,9 +23,9 @@ const Modal = (props) => {
                                 <div>
                                     <h1 className='text-xl font-bold'>Integrations</h1>
                                     <div className='text-left'>
-                                    {
-                                       integrations.map((int, index)=><p>{index + 1}.{int?int:"No data found!"}</p>) 
-                                    }
+                                        {
+                                           integrations?.map((int, index)=><p>{index + 1}.{int? int: "No result found!"}</p>) 
+                                        }
                                     </div>
                                 </div>
                             </div>
